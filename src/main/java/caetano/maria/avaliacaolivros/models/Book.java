@@ -21,7 +21,7 @@ public class Book {
     private String title;
 
     @ManyToOne
-    private User name;
+    private User userId;
 
     @Column(nullable = false)
     private Integer year;

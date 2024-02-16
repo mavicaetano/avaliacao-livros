@@ -21,9 +21,9 @@ public class Review {
     private Integer rate;
 
     @ManyToOne
-    private User name;
+    private User userId;
 
     @ManyToOne
-    private Book title;
+    private Book bookId;
 
 }
