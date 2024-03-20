@@ -1,5 +1,6 @@
 package caetano.maria.avaliacaolivros.models;
 
+import caetano.maria.avaliacaolivros.dto.UserDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,6 +33,12 @@ public class User implements UserDetails {
 
     @Column(nullable = false)
     private String password;
+
+    public User(UserDTO userDTO) {
+        this.name = userDTO.getName().trim();
+        this.email = userDTO.getEmail().trim().toLowerCase();
+        this.password = userDTO.getPassword();
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
